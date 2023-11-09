@@ -154,37 +154,37 @@
 //     }
 //     console.log(result)
 
-/* ============================================================================================ */
+/* ================================ Модифицирована задача с фильмами ================================== */
 
-const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "")
+// const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "")
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-}
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// }
 
-let i = 0
-while (i < 2) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-          b = prompt('На сколько оцените его?', '');
-          
-          (a != null && b != null && a != "" && b != "" && a.length <= 50) ?
-            personalMovieDB.movies[a] = b : i--;
-        i++;
-}
+// let i = 0
+// while (i < 2) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//           b = prompt('На сколько оцените его?', '');
 
-      if (personalMovieDB.count < 10) {
-        console.log("Просмотрено довольно мало фильмов")
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log("Вы классический зритель")
-    } else if (personalMovieDB.count >= 30) {
-    console.log("Вы киноман")
-    } else console.log("Произошла ошибка")
+//           (a != null && b != null && a != "" && b != "" && a.length <= 50) ?
+//             personalMovieDB.movies[a] = b : i--;
+//         i++;
+// }
 
-    console.log(personalMovieDB)
+//       if (personalMovieDB.count < 10) {
+//         console.log("Просмотрено довольно мало фильмов")
+//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//         console.log("Вы классический зритель")
+//     } else if (personalMovieDB.count >= 30) {
+//     console.log("Вы киноман")
+//     } else console.log("Произошла ошибка")
+
+//     console.log(personalMovieDB)
 
 
 
@@ -212,3 +212,171 @@ while (i < 2) {
     //         i++
     // }
     
+/* ================================================================================================== */
+
+// const name = prompt("как тебя зовут?", "")
+
+// function hello(n) {
+//     alert(`Привет, ${n}!`)
+// }
+// hello(name)
+
+
+// const name = "Evgeniy"
+// function sayHello(name) {
+//     return `Привет, ${name}!`
+// }
+// console.log(sayHello(name))
+
+// const num = 5
+// function returnNeighboringNumbers(num) {
+//     const arr = []
+//     for (let i = 0; i < 3; i++) {
+//         arr[i] = num + (i - 1)
+//     }
+//     return arr
+// }
+// console.log(returnNeighboringNumbers(num))
+
+// const number = 5, iteration = 3
+
+// function getMathResult(num, iter) {
+//     if (num > 0) {
+//         for (let i = 0; i < iter; i++) {
+//             let x = + num
+//             let result = x
+//             result += "---"
+//         }
+//         return result
+//     } else {
+//         return num
+//     }
+// }
+// console.log(getMathResult(number, iteration))
+
+// const number = 7, iteration = 10
+
+// function getMathResult(num, iter) {
+//     if (num > 0) {
+//         let result
+//         let x
+//         for (let i = 0; i < iter; i++) {
+//             x = + num
+//             result = x
+//             result += "---"
+//         }
+//         return result
+//     } else {
+//         return num
+//     }
+    
+// }
+// console.log(getMathResult(number, iteration))
+
+// const num = 5, iter = 7
+
+// function getMathResult(num, iter) {
+//     if (typeof(iter) === 'number' && iter > 0) {
+        
+//         let result = ''
+//         for (let i = 1; i <= iter; i++) {
+//             if (i === iter) {
+//                 result += `${num * i}`
+//             } else {
+//                 result += `${num * i}---`
+//             }
+//         }
+//         return result
+
+//     } else return num
+// }
+// console.log(getMathResult(num, iter))
+
+// const leng = 40
+
+// function cube(leng) {
+//     let result = ''
+// for (let i = 1; i <= leng; i++) {
+//     if (i === 1 || i === leng) {
+//         for(let j = 1; j <= leng; j++) {
+//             result += '*'
+//         }
+//         result += '\n'
+//     } else {
+//         for(let j = 1; j <= leng; j++) {
+//             if (j === 1 || j === leng) {
+//                 result += '*'
+//             } else result += '-'
+//         }
+//         result += '\n'
+//     }
+// }
+// return result
+// }
+// console.log(cube(leng))
+
+
+
+let numberOfFilms
+
+function start() {
+    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "")
+
+while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "")
+}
+}
+
+start()
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+}
+
+    function rememberMyFilms() {
+        for ( let i = 0; i < 2; i++) {
+            const a = prompt('Один из последних просмотренных фильмов?', ''),
+                  b = prompt('На сколько оцените его?', '')
+            if (a != null && b != null && a != "" && b != "" && a.length <= 50) {
+                personalMovieDB.movies[a] = b
+    
+            } else {
+                i--
+            }
+          }
+    }
+
+      rememberMyFilms()
+
+    function detectPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+        console.log("Просмотрено довольно мало фильмов")
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        console.log("Вы классический зритель")
+    } else if (personalMovieDB.count >= 30) {
+    console.log("Вы киноман")
+    } else console.log("Произошла ошибка")
+        }
+        
+    detectPersonalLevel()
+
+    function showMyDB() {
+        if (personalMovieDB.privat == false) {
+            console.log('Доступ разрешен')
+            console.log(personalMovieDB)
+        } else console.log('Обьект приватный, его нельзя отобразить.')
+    }
+    
+    showMyDB()
+
+    function writeYourGenres() {
+        for (let i = 1; i <= 3; i++) {
+            personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`)
+        }
+    }
+
+    writeYourGenres()
